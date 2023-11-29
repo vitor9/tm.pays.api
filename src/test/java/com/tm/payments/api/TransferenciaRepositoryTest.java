@@ -22,21 +22,17 @@ public class TransferenciaRepositoryTest {
     @Test
     @Transactional
     public void testSalvarEConsultarTransferencia() {
-        // Criação de uma instância de Transferencia
         Transferencia transferencia = new Transferencia();
         transferencia.setContaOrigem("123456");
         transferencia.setContaDestino("789012");
         transferencia.setValorTransferencia(BigDecimal.valueOf(100.00));
         transferencia.setDataTransferencia(LocalDate.now());
 
-        // Salva a transferência no banco de dados
         transferenciaRepository.save(transferencia);
 
-        // Consulta a transferência do banco de dados
         Transferencia transferenciaSalva = transferenciaRepository.findById(transferencia.getId()).orElse(null);
         transferenciaRepository.findAll();
 
-        // Verifica se a transferência foi salva e consultada corretamente
         assertThat(transferenciaSalva).isNotNull();
         assertThat(transferenciaSalva.getContaOrigem()).isEqualTo("123456");
         assertThat(transferenciaSalva.getContaDestino()).isEqualTo("789012");

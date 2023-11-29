@@ -27,4 +27,6 @@ public class Transferencia {
 
     private LocalDate dataTransferencia;
 
+    private BigDecimal taxa;
+    
 }

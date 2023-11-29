@@ -13,7 +13,7 @@ import com.tm.payments.api.model.Transferencia;
 import com.tm.payments.api.repository.TransferenciaRepository;
 
 @RestController
-@RequestMapping
+@RequestMapping("/api/transferencias")
 public class TransferenciaController {
 
 	 private final TransferenciaRepository transferenciaRepository;
